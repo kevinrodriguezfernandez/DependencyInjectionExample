@@ -12,7 +12,6 @@ namespace InjectionXmlExample
         {
             ConfigureContainer();
             Resolucion();
-
             Console.ReadLine();
 
         }
@@ -36,8 +35,9 @@ namespace InjectionXmlExample
                 var bmw = scope.Resolve<BMWAutoService>();
                 var ford = scope.Resolve<FordAutoService>();
                 var honda = scope.Resolve<HondaAutoService>();
-                AutoServiceCallerImp serviceCaller = new AutoServiceCallerImp(bmw, honda, ford);
+                AutoServiceCallerImp serviceCaller = new AutoServiceCallerImp(bmw, ford, honda);
                 serviceCaller.CallAutoService();
+
             }
         }
     }
